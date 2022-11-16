@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-6 p-5">
+    <form [formGroup]="EventForm" (ngSubmit)="createEvent(EventForm.value)">
+      <div class="mb-3">
+        <label class="form-label">Event Name</label>
+        <input formControlName="name" type="text" class="form-control" [ngClass]="{'is-invalid': EventForm.controls['name'].errors && EventForm.controls['name'].touched,
+      'is-valid': !EventForm.controls['name'].errors && EventForm.controls['name'].touched}">
+        <small style="color: red;" *ngIf="EventForm.controls['name'].errors && EventForm.controls['name'].touched">Event
+          name is
+          required</small>
+      </div>
+      <!-- <div class="mb-3">
+        <label class="form-label">Event Date</label>
+        <input formControlName="date" type="date" class="form-control" [ngClass]="{'is-invalid': EventForm.controls['date'].errors && EventForm.controls['date'].touched,
+        'is-valid': !EventForm.controls['name'].errors && EventForm.controls['name'].touched}">
+        <small style="color: red;" *ngIf="EventForm.controls['date'].errors && EventForm.controls['date'].touched">Event
+          date is
+          required</small>
+      </div> -->
+      <div class="mb-3">
+        <label class="form-label">Event Venue</label>
+        <input formControlName="venue" type="text" class="form-control" [ngClass]="{'is-invalid': EventForm.controls['venue'].errors && EventForm.controls['venue'].touched,
+        'is-valid': !EventForm.controls['venue'].errors && EventForm.controls['venue'].touched}">
+        <small style="color: red;"
+          *ngIf="EventForm.controls['venue'].errors && EventForm.controls['venue'].touched">Event
+          venue is
+          required</small>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input formControlName="description" type="text" class="form-control" [ngClass]="{'is-invalid': EventForm.controls['description'].errors && EventForm.controls['description'].touched,
+        'is-valid': !EventForm.controls['description'].errors && EventForm.controls['description'].touched}">
+        <small style="color: red;"
+          *ngIf="EventForm.controls['description'].errors && EventForm.controls['description'].touched">Event
+          description is
+          required</small>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Image URL</label>
+        <input formControlName="imageURL" type="text" class="form-control" [ngClass]="{'is-invalid': EventForm.controls['imageURL'].errors && EventForm.controls['imageURL'].touched,
+        'is-valid': !EventForm.controls['imageURL'].errors && EventForm.controls['imageURL'].touched}">
+        <small style="color: red;"
+          *ngIf="EventForm.controls['imageURL'].errors && EventForm.controls['imageURL'].touched">Event
+          image URL is
+          required</small>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Participant Name</label>
+        <input formControlName="p_name" type="text" class="form-control" [ngClass]="{'is-invalid': EventForm.controls['p_name'].errors && EventForm.controls['p_name'].touched,
+        'is-valid': !EventForm.controls['p_name'].errors && EventForm.controls['p_name'].touched}">
+        <small style="color: red;"
+          *ngIf="EventForm.controls['p_name'].errors && EventForm.controls['p_name'].touched">Participant Name is required</small>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Participant Age</label>
+        <input formControlName="p_age" type="text" class="form-control" [ngClass]="{'is-invalid': EventForm.controls['p_age'].errors && EventForm.controls['p_age'].touched,
+        'is-valid': !EventForm.controls['p_age'].errors && EventForm.controls['p_age'].touched}">
+        <small style="color: red;"
+          *ngIf="EventForm.controls['p_age'].errors && EventForm.controls['p_age'].touched">Participant Age is required</small>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
